@@ -13,7 +13,7 @@ namespace Fresh\Bundle\DoctrineEnumBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraints\Choice;
 
 /**
- * Enum Constraint
+ * ENUM Constraint
  *
  * @author Artem Genvald <genvaldartem@gmail.com>
  *
@@ -21,10 +21,15 @@ use Symfony\Component\Validator\Constraints\Choice;
  */
 class Enum extends Choice
 {
+    /**
+     * @var string Entity
+     */
     public $entity;
 
     /**
-     * {@inheritDoc}
+     * Returns the name of the required options
+     *
+     * @return array
      */
     public function requiredOptions()
     {
@@ -32,7 +37,9 @@ class Enum extends Choice
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the name of the default option
+     *
+     * @return string
      */
     public function getDefaultOption()
     {
